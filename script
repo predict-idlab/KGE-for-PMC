@@ -1,0 +1,3 @@
+#!/bin/bash
+
+merweb -v "pmc=https://pmc/classes/" -f merweb-diagrams/pmc-class-diagram.txt -s KGs/PMCShapes.jsonld -c KGs/PMCClasses.jsonld -p "owls=http://www.daml.org/services/owl-s/1.1/Process.owl#;expr=http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#;ssn=http://www.w3.org/ns/ssn/;sosa=http://www.w3.org/ns/sosa/"

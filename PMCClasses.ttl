@@ -1,57 +1,64 @@
+@prefix : <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix expr: <http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#> .
+@prefix owls: <http://www.daml.org/services/owl-s/1.1/Process.owl#> .
+@prefix pmc: <https://pmc/classes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 
-<https://pmc/classes/PMCActuation> a rdfs:Class ;
-    rdfs:subClassOf ( ssn:Actuation ) .
+pmc:PMCActuation a :Class ;
+    :subClassOf ( ssn:Actuation ) .
 
-<https://pmc/classes/PMCActuationProcess> a rdfs:Class ;
-    rdfs:subClassOf ( <https://pmc/classes/PMCProcess> ) .
+pmc:PMCActuationProcess a :Class ;
+    :subClassOf ( pmc:PMCProcess ) .
 
-<https://pmc/classes/PMCActuationStep> a rdfs:Class ;
-    rdfs:subClassOf ( <https://pmc/classes/PMCDirectStep> ) .
+pmc:PMCActuationStep a :Class ;
+    :subClassOf ( pmc:PMCDirectStep ) .
 
-<https://pmc/classes/PMCCondition> a rdfs:Class ;
-    rdfs:subClassOf ( <http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#Condition> ) .
+pmc:PMCCondition a :Class ;
+    :subClassOf ( expr:Condition ) .
 
-<https://pmc/classes/PMCConditionalStep> a rdfs:Class ;
-    rdfs:subClassOf ( <https://pmc/classes/PMCStep> <http://www.daml.org/services/owl-s/1.1/Process.owl#If-Then-Else> ) .
+pmc:PMCConditionalStep a :Class ;
+    :subClassOf ( pmc:PMCStep owls:If-Then-Else ) .
 
-<https://pmc/classes/PMCDirectStep> a rdfs:Class ;
-    rdfs:subClassOf ( <https://pmc/classes/PMCStep> ) .
+pmc:PMCDirectStep a :Class ;
+    :subClassOf ( pmc:PMCStep ) .
 
-<https://pmc/classes/PMCModule> a rdfs:Class ;
-    rdfs:subClassOf ( <https://pmc/classes/PMCStep> <http://www.daml.org/services/owl-s/1.1/Process.owl#Sequence> ) .
+pmc:PMCModule a :Class ;
+    :subClassOf ( pmc:PMCStep owls:Sequence ) .
 
-<https://pmc/classes/PMCObservation> a rdfs:Class ;
-    rdfs:subClassOf ( ssn:Observation ) .
+pmc:PMCObservation a :Class ;
+    :subClassOf ( ssn:Observation ) .
 
-<https://pmc/classes/PMCObservationProcess> a rdfs:Class ;
-    rdfs:subClassOf ( <https://pmc/classes/PMCProcess> ) .
+pmc:PMCObservationProcess a :Class ;
+    :subClassOf ( pmc:PMCProcess ) .
 
-<https://pmc/classes/PMCObservationStep> a rdfs:Class ;
-    rdfs:subClassOf ( <https://pmc/classes/PMCDirectStep> ) .
+pmc:PMCObservationStep a :Class ;
+    :subClassOf ( pmc:PMCDirectStep ) .
 
-<https://pmc/classes/PMCProcess> a rdfs:Class ;
-    rdfs:subClassOf ( ssn:Procedure <http://www.daml.org/services/owl-s/1.1/Process.owl#Process> ) .
+pmc:PMCProcess a :Class ;
+    :subClassOf ( ssn:Procedure owls:Process ) .
 
-<https://pmc/classes/PMCSampling> a rdfs:Class ;
-    rdfs:subClassOf ( ssn:Sampling ) .
+pmc:PMCSampling a :Class ;
+    :subClassOf ( ssn:Sampling ) .
 
-<https://pmc/classes/PMCSamplingProcess> a rdfs:Class ;
-    rdfs:subClassOf ( <https://pmc/classes/PMCProcess> ) .
+pmc:PMCSamplingProcess a :Class ;
+    :subClassOf ( pmc:PMCProcess ) .
 
-<https://pmc/classes/PMCSamplingStep> a rdfs:Class ;
-    rdfs:subClassOf ( <https://pmc/classes/PMCDirectStep> ) .
+pmc:PMCSamplingStep a :Class ;
+    :subClassOf ( pmc:PMCDirectStep ) .
 
-<https://pmc/classes/PMCStep> a rdfs:Class ;
-    rdfs:subClassOf ( <http://www.daml.org/services/owl-s/1.1/Process.owl#ControlConstruct> ) .
+pmc:PMCStep a :Class ;
+    :subClassOf ( owls:ControlConstruct ) .
 
-<https://pmc/classes/begin> a rdf:Property .
+pmc:begin a rdf:Property .
 
-<https://pmc/classes/end> a rdf:Property .
+pmc:contains a rdf:Property .
 
-<https://pmc/classes/followedBy> a rdf:Property .
+pmc:end a rdf:Property .
 
-<https://pmc/classes/usedToMake> a rdf:Property .
+pmc:followedBy a rdf:Property .
+
+pmc:inModule a rdf:Property .
+
+pmc:usedToMake a rdf:Property .
 

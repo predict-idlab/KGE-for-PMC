@@ -1,0 +1,29 @@
+flowchart TD
+
+    subgraph Reaction.contains.inModule
+    vescswo[VesiclesSwelling] --nextStep--> chydrolysis{Hydrolysis?}
+    chydrolysis{Hydrolysis?} --thenStep--> flosoftdeswo[FlosoftDeswelling]
+    chydrolysis{Hydrolysis?} --elseStep--> vescswo[VesiclesSwelling]
+    class vescswo PMCObservationStep
+    class chydrolysis PMCConditionalStep
+    class flosoftdeswo PMCObservationStep
+    end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
